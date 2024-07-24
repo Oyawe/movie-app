@@ -15,6 +15,9 @@ export default async function SearchPage({ params }) {
       {results && results.length === 0 && (
         <h1 className="pt-6 text-center ">No results found</h1>
       )}
+      <p className="px-5 mx-auto mt-2 text-2xl max-w-7xl text-start ">
+        Results for `{searchTerm}`...
+      </p>
       {results && <Results results={results} />}
     </div>
   );
