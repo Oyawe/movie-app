@@ -3,7 +3,7 @@ import Loading from "../loading";
 
 export default function About() {
   return (
-    <Suspense fallback={<Loading />}>
+    <Suspense>
       <div className="p-3 mx-auto space-y-6 max-w-7xl">
         <h1 className="text-2xl font-medium text-amber-600">About</h1>
         <p>

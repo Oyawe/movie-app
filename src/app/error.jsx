@@ -9,7 +9,7 @@ export default function Error({ error, reset }) {
     console.log(error);
   }, [error]);
   return (
-    <Suspense fallback={<Loading />}>
+    <Suspense>
       <div className="text-center mt10">
         <h1>Something went wrong. Please try again later.</h1>
         <button className="hover: text-amber-600" onClick={() => reset()}>

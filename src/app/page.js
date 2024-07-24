@@ -16,7 +16,7 @@ const Home = async ({ searchParams }) => {
   // console.log(results);
 
   return (
-    <Suspense fallback={<Loading />}>
+    <Suspense>
       <div>
         <Results results={results} />
       </div>
