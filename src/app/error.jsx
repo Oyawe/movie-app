@@ -5,9 +5,6 @@ import { useEffect } from "react";
 import Loading from "./loading";
 
 export default function Error({ error, reset }) {
-  useEffect(() => {
-    console.log(error);
-  }, [error]);
   return (
     <Suspense>
       <div className="text-center mt10">
