@@ -5,7 +5,7 @@ import { FiThumbsUp } from "react-icons/fi";
 
 export default function Card({ result }) {
   return (
-    <div className="overflow-hidden transition duration-200 rounded-lg cursor-pointer group sm:hover:shadow-slate-400 sm:shadow-md sm:border sm:border-slate-400 sm:m-3">
+    <div className="p-2 overflow-hidden transition duration-200 rounded-lg cursor-pointer group sm:p-0 sm:hover:shadow-slate-400 sm:shadow-md sm:border sm:border-slate-400 sm:m-3">
       <Link href={`/movie/${result.id}`}>
         <Image
           alt=""
@@ -14,7 +14,7 @@ export default function Card({ result }) {
           }`}
           width={400}
           height={400}
-          className="p-2 transition-opacity duration-300 sm:p-0 sm:rounded-t-lg group-hover:opacity-75"
+          className="p-2 transition-opacity duration-300 rounded-2xl sm:p-0 sm:rounded-t-lg group-hover:opacity-75"
         ></Image>
         <div className="p-2">
           <p className="mt-2 mb-4 text-sm line-clamp-2">{result.overview}</p>

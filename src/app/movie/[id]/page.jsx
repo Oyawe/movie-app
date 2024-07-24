@@ -11,13 +11,13 @@ export default async function MoviePage({ params }) {
   //   console.log(movie);
   return (
     <div className="w-full">
-      <div className="flex flex-col content-center max-w-6xl p-6 mx-auto md:pt-8 md:flex-row md:space-x-6">
+      <div className="flex flex-col content-center p-6 mx-auto max-w-7xl md:pt-8 md:flex-row md:space-x-6">
         <Image
           alt=""
           src={`https://image.tmdb.org/t/p/original/${
             movie.poster_path || movie.background_path
           }`}
-          width={500}
+          width={400}
           height={300}
           className="rounded-xl"
         ></Image>
