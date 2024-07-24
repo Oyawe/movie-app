@@ -18,12 +18,12 @@ export default function SearchBox() {
       <input
         type="text"
         placeholder="Search Keywords..."
-        className="flex-1 w-full placeholder-gray-300 bg-transparent rounded-md outline-none h-14"
+        className="flex-1 w-full placeholder-gray-700 bg-transparent rounded-md outline-none dark:placeholder-gray-300 h-14"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
       <button
-        className="text-amber-600 disabled:text-gray-300"
+        className="text-amber-600 disabled:text-gray-700 dark:disabled:text-gray-300"
         disabled={search === ""}
       >
         Search

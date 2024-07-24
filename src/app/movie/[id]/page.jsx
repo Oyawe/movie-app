@@ -13,7 +13,7 @@ export default async function MoviePage({ params }) {
     <div className="w-full">
       <div className="flex flex-col content-center p-6 mx-auto max-w-7xl md:pt-8 md:flex-row md:space-x-6">
         <Image
-          alt=""
+          alt={movie.title || movie.name}
           src={`https://image.tmdb.org/t/p/original/${
             movie.poster_path || movie.background_path
           }`}
