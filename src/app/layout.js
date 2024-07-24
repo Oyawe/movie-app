@@ -1,12 +1,17 @@
-import { Inter } from "next/font/google";
+import { M_PLUS_1 } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import { Providers } from "./Providers";
 import { Navbar } from "./components/Navbar";
 import SearchBox from "./components/SearchBox";
-import { Suspense } from "react";
+// import { Suspense } from "react";
 
-const inter = Inter({ subsets: ["latin"] });
+const m_plus_1 = M_PLUS_1({
+  subsets: ["latin"], weight: ['300', '700'],
+  style: ['normal'],
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export const metadata = {
   title: "IMDb Clone",
@@ -15,17 +20,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <Suspense>
-      <html lang="en">
-        <body className={inter.className}>
-          <Providers>
-            <Header />
-            <Navbar />
-            <SearchBox />
-            {children}
-          </Providers>
-        </body>
-      </html>
-    </Suspense>
+
+    <html lang="en">
+      <body className={m_plus_1.className}>
+        <Providers>
+          <Header />
+          <Navbar />
+          <SearchBox />
+          {children}
+        </Providers>
+      </body>
+    </html>
+
   );
 }

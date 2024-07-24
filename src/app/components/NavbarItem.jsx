@@ -2,12 +2,13 @@
 import React, { Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import Loading from "../loading";
 
 export default function NavbarItem({ title, param }) {
   const searchParams = useSearchParams();
   const genre = searchParams.get("genre");
   return (
-    <Suspense>
+    <Suspense fallback={<Loading />}>
       <div>
         <Link
           className={`hover:text-amber-600 transition ease-in duration-300 font-semibold ${

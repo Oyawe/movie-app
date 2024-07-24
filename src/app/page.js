@@ -2,6 +2,7 @@ const API_KEY = process.env.API_KEY;
 
 import React, { Suspense } from 'react'
 import Results from './components/Results';
+import Loading from './loading';
 
 const Home = async ({ searchParams }) => {
   const genre = searchParams.genre || 'fetchTrending';
@@ -15,7 +16,7 @@ const Home = async ({ searchParams }) => {
   // console.log(results);
 
   return (
-    <Suspense>
+    <Suspense fallback={<Loading />}>
       <div>
         <Results results={results} />
       </div>
