@@ -7,8 +7,8 @@ export default function NavbarItem({ title, param }) {
   const searchParams = useSearchParams();
   const genre = searchParams.get("genre");
   return (
-    <div>
-      <Suspense>
+    <Suspense>
+      <div>
         <Link
           className={`hover:text-amber-600 transition ease-in duration-300 font-semibold ${
             genre === param
@@ -19,7 +19,7 @@ export default function NavbarItem({ title, param }) {
         >
           {title}
         </Link>
-      </Suspense>
-    </div>
+      </div>
+    </Suspense>
   );
 }

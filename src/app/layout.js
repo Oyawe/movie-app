@@ -4,25 +4,28 @@ import Header from "./components/Header";
 import { Providers } from "./Providers";
 import { Navbar } from "./components/Navbar";
 import SearchBox from "./components/SearchBox";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "IMDB Clone",
+  title: "IMDb Clone",
   description: "This is a movie app clone",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Providers>
-          <Header />
-          <Navbar />
-          <SearchBox />
-          {children}
-        </Providers>
-      </body>
-    </html>
+    <Suspense>
+      <html lang="en">
+        <body className={inter.className}>
+          <Providers>
+            <Header />
+            <Navbar />
+            <SearchBox />
+            {children}
+          </Providers>
+        </body>
+      </html>
+    </Suspense>
   );
 }

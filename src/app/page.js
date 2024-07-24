@@ -1,6 +1,6 @@
 const API_KEY = process.env.API_KEY;
 
-import React from 'react'
+import React, { Suspense } from 'react'
 import Results from './components/Results';
 
 const Home = async ({ searchParams }) => {
@@ -15,9 +15,11 @@ const Home = async ({ searchParams }) => {
   // console.log(results);
 
   return (
-    <div>
-      <Results results={results} />
-    </div>
+    <Suspense>
+      <div>
+        <Results results={results} />
+      </div>
+    </Suspense>
   )
 }
 
