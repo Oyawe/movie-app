@@ -16,7 +16,7 @@ const Header = () => {
         <DarkMode />
         <Link href="/" className="flex items-center gap-1">
           <span className="px-1 py-2 text-2xl font-bold rounded-lg bg-amber-500">
-            IMDB
+            IMDb
           </span>
           <span className="hidden text-xl sm:inline">clone</span>
         </Link>

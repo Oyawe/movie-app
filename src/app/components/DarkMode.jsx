@@ -17,12 +17,12 @@ export default function DarkMode() {
         (currentTheme === "dark" ? (
           <MdLightMode
             onClick={() => setTheme("light")}
-            className="text-xl cursor-pointer hover:text-amber-500"
+            className="text-xl transition duration-300 ease-in cursor-pointer hover:text-amber-500"
           />
         ) : (
           <MdDarkMode
             onClick={() => setTheme("dark")}
-            className="text-xl cursor-pointer hover:text-amber-500"
+            className="text-xl transition duration-300 ease-in cursor-pointer hover:text-amber-500"
           />
         ))}
     </div>

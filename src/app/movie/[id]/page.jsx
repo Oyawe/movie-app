@@ -15,7 +15,7 @@ export default async function MoviePage({ params }) {
         <Image
           alt=""
           src={`https://image.tmdb.org/t/p/original/${
-            movie.backdrop_path || movie.poster_path
+            movie.poster_path || movie.background_path
           }`}
           width={500}
           height={300}
