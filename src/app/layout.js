@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import { Providers } from "./Providers";
 import { Navbar } from "./components/Navbar";
 import SearchBox from "./components/SearchBox";
+import { Suspense } from "react";
 // import { Suspense } from "react";
 
 const m_plus_1 = M_PLUS_1({
@@ -23,12 +24,14 @@ export default function RootLayout({ children }) {
 
     <html lang="en">
       <body className={m_plus_1.className}>
-        <Providers>
-          <Header />
-          <Navbar />
-          <SearchBox />
-          {children}
-        </Providers>
+        <Suspense>
+          <Providers>
+            <Header />
+            <Navbar />
+            <SearchBox />
+            {children}
+          </Providers>
+        </Suspense>
       </body>
     </html>
 
