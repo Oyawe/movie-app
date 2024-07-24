@@ -1,25 +1,26 @@
 const API_KEY = process.env.API_KEY;
 
-import React from 'react'
+import React from 'react';
+import axios from 'axios';
 import Results from './components/Results';
 
 const Home = async ({ searchParams }) => {
   const genre = searchParams.genre || 'fetchTrending';
-  const res = await fetch(`https://api.themoviedb.org/3${genre === 'fetchTopRated' ? `/movie/top_rated` : `/trending/all/week`}?api_key=${API_KEY}&language=en-US&page=1`);
-  const data = await res.json();
-  //if response is not ok
-  if (!res.ok) {
-    throw new Error('Failed to fetch')
+  const url = `https://api.themoviedb.org/3${genre === 'fetchTopRated' ? '/movie/top_rated' : '/trending/all/week'}?api_key=${API_KEY}&language=en-US&page=1`;
+
+  try {
+    const res = await axios.get(url);
+    const results = res.data.results;
+    console.log(results)
+
+    return (
+      <div>
+        <Results results={results} />
+      </div>
+    );
+  } catch (error) {
+    throw new Error('Failed to fetch');
   }
-  const results = data.results
-  // console.log(results);
+};
 
-
-  return (
-    <div>
-      <Results results={results} />
-    </div>
-  )
-}
-
-export default Home
+export default Home;
