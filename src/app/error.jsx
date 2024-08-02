@@ -1,7 +1,6 @@
 "use client";
 
 import React, { Suspense } from "react";
-import { useEffect } from "react";
 import Loading from "./loading";
 
 export default function Error({ error, reset }) {
